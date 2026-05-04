@@ -1,5 +1,5 @@
-import sys 
-import os
+
+import urllib
 import yaml
 import flask
 
@@ -22,6 +22,15 @@ class Person(object):
 """info"""
 def print_nametag(format_string, person):
     print(format_string.format(person=person))
+
+
+def fetch_website(urllib_version, url):
+    if urllib_version == "2":
+        import urllib2 as urllib
+    elif urllib_version == "3":
+        import urllib.request as urllib
+    else:
+        raise ValueError("Invalid version")
 
 
 def fetch_website(urllib_version, url):
