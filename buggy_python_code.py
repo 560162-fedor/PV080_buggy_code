@@ -19,6 +19,7 @@ class Person(object):
         self.name = name
 
 
+"""info"""
 def print_nametag(format_string, person):
     print(format_string.format(person=person))
 
